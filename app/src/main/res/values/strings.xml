@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Chu_Navarro</string>
+    <string-array name="continents">
+        <item>North and South America</item>
+        <item>Europe</item>
+        <item>Asia</item>
+        <item>Africa</item>
+        <item>Australia</item>
+        <item>Antarctica</item>
+    </string-array>
+</resources>
