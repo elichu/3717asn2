@@ -6,9 +6,11 @@ package ca.bcit.ass2.chu_navarro;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.util.Log;
+import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.ImageView;
@@ -40,15 +42,16 @@ class ImageDownloaderTask extends AsyncTask<String, Void, URL> {
         }
 
         if (imageViewReference != null) {
-            WebView imageView = imageViewReference.get();
-            if (imageView != null) {
+            WebView flagImg = imageViewReference.get();
+            if (flagImg != null) {
                 if (url != null) {
-                    //imageView.getSettings().setDefaultZoom(WebSettings.ZoomDensity.FAR);
-                    imageView.loadUrl(url.toString());
+                    flagImg.setBackgroundColor(Color.TRANSPARENT);
+                    flagImg.getSettings().setLoadWithOverviewMode(true);
+                    flagImg.getSettings().setUseWideViewPort(true);
+                    flagImg.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
+                    flagImg.setInitialScale(1);
+                    flagImg.loadUrl(url.toString());
 
-                } else {
-                    //Drawable placeholder = imageView.getContext().getResources().getDrawable(R.drawable.placeholder);
-                    //imageView.setImageDrawable(placeholder);
                 }
             }
         }

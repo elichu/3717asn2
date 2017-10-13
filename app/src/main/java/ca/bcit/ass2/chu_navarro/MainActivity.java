@@ -192,11 +192,6 @@ public class MainActivity extends Activity {
             if (pDialog.isShowing())
                 pDialog.dismiss();
 
-            //Toon[] toonArray = toonList.toArray(new Toon[toonList.size()]);
-//            Intent intent = new Intent(MainActivity.this, CountryActivity.class);
-//            intent.putExtra("countries", countryList);
-//            startActivity(intent);
-
             CountryAdapter adapter = new CountryAdapter(MainActivity.this, countryList);
 
             // Attach the adapter to a ListView
